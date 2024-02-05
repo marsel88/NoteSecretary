@@ -1,0 +1,27 @@
+﻿<Window x:Class="NoteSecretary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NoteSecretary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Background="#708090">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="600"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="200" Orientation="Vertical" Background="#4682B4">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="image/note_logo.png" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+                <Label Content="Secretary" Foreground="#FFFAFA" FontWeight="DemiBold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </StackPanel>
+            <Button x:Name="MainMenuBtn" BorderThickness="0" Margin="5" Width="150" Height="35" Background="Transparent" FontSize="20" Foreground="#FFFAFA" Content="Домой" Click="MainMenuBtn_Click"></Button>
+            <Button x:Name="ClientsPageBtn" BorderThickness="0" Margin="5" Width="150" Height="35" Background="Transparent" FontSize="20" Foreground="#FFFAFA" Content="Клиенты" Click="ClientsPageBtn_Click"></Button>
+            <Button x:Name="MeetingsPageBtn" BorderThickness="0" Margin="5" Width="150" Height="35" Background="Transparent" FontSize="20" Foreground="#FFFAFA" Content="Встречи" Click="MeetingsPageBtn_Click"></Button>
+            <Button x:Name="DoListPageBtn" BorderThickness="0" Margin="5" Width="150" Height="35" Background="Transparent" FontSize="20" Foreground="#FFFAFA" Content="Список дел" Click="DoListPageBtn_Click"></Button>
+        </StackPanel>
+        <Frame x:Name="InfoPages" Grid.Column="1" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>
