@@ -28,7 +28,7 @@ namespace NoteSecretary
 
         private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoPages.Navigate(new Uri("Pages/HomePage.xaml", UriKind.Relative));
         }
 
         private void ClientsPageBtn_Click(object sender, RoutedEventArgs e)
