@@ -33,17 +33,17 @@ namespace NoteSecretary
 
         private void ClientsPageBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoPages.Navigate(new Uri("Pages/ClientsPage.xaml", UriKind.Relative));
         }
 
         private void MeetingsPageBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoPages.Navigate(new Uri("Pages/MeetingsPage.xaml", UriKind.Relative));
         }
 
         private void DoListPageBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoPages.Navigate(new Uri("Pages/DoListPage.xaml", UriKind.Relative));
         }
     }
 }
