@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:NoteSecretary"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Background="#708090">
+        Background="#708090"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
