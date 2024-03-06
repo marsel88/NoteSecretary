@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NoteSecretary.Pages
+namespace NoteSecretary
 {
     /// <summary>
-    /// Логика взаимодействия для DoListPage.xaml
+    /// Логика взаимодействия для AuthWindow.xaml
     /// </summary>
-    public partial class DoListPage : Page
+    public partial class AuthWindow : Window
     {
-        public DoListPage()
+        public AuthWindow()
         {
             InitializeComponent();
-            DoListDG.ItemsSource = DB_Connection.secretaryDBEntities.DoList.ToList();
         }
     }
 }

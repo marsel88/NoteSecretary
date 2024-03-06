@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace NoteSecretary.Pages
 {
     /// <summary>
@@ -23,6 +22,7 @@ namespace NoteSecretary.Pages
         public ClientsPage()
         {
             InitializeComponent();
+            ClientsDG.ItemsSource = DB_Connection.secretaryDBEntities.Clients.ToList();
         }
     }
 }

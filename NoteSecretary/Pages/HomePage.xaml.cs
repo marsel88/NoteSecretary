@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,9 +24,13 @@ namespace NoteSecretary.Pages
     {
         public HomePage()
         {
+
             InitializeComponent();
             DateTime now = DateTime.Now;
             TodayDateTimeTB.Text = now.ToString("g");
+            DB_Connection.secretaryDBEntities.User.ToList();
+            NameTB.Text = DB_Connection.secretaryDBEntities.User.First().Name;
+            
         }
     }
 }

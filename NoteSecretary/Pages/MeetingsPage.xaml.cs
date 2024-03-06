@@ -23,6 +23,8 @@ namespace NoteSecretary.Pages
         public MeetingsPage()
         {
             InitializeComponent();
+            MeetingsDG.ItemsSource = DB_Connection.secretaryDBEntities.Meetings.ToList();
+
         }
     }
 }

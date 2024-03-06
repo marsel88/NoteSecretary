@@ -16,6 +16,6 @@
             <Button x:Name="DeleteMeetingBtn" Margin="10"  Width="70" Height="20">Удалить</Button>
         </StackPanel>
         <Label FontSize="20" FontWeight="DemiBold" Foreground="#FFFAFA" Margin="20" Width="120" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top">Встречи</Label>
-        <DataGrid x:Name="MeetingsDG" Width="500" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30"></DataGrid>
+        <DataGrid x:Name="MeetingsDG" Width="600" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30"></DataGrid>
     </Grid>
 </Page>
