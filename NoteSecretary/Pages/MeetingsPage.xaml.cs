@@ -24,7 +24,6 @@ namespace NoteSecretary.Pages
         {
             InitializeComponent();
             MeetingsDG.ItemsSource = DB_Connection.secretaryDBEntities.Meetings.ToList();
-
         }
     }
 }

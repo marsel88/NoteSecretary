@@ -17,7 +17,7 @@ namespace NoteSecretary
         public int Id { get; set; }
         public string Name { get; set; }
         public int ClientID { get; set; }
-        public string date { get; set; }
+        public System.DateTime date { get; set; }
     
         public virtual Clients Clients { get; set; }
     }

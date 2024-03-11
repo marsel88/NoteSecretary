@@ -16,6 +16,12 @@
             <Button x:Name="DeleteMeetingBtn" Margin="10"  Width="70" Height="20">Удалить</Button>
         </StackPanel>
         <Label FontSize="20" FontWeight="DemiBold" Foreground="#FFFAFA" Margin="20" Width="120" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top">Встречи</Label>
-        <DataGrid x:Name="MeetingsDG" Width="600" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30"></DataGrid>
+        <DataGrid x:Name="MeetingsDG" Width="550" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Clients.Name}" Header="Клиент" Width="*"/>
+                <DataGridTextColumn Binding="{Binding date, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Header="Дата" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Тема встречи" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

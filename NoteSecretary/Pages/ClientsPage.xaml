@@ -15,7 +15,14 @@
             <Button x:Name="DeleteClientBtn" Margin="10"  Width="70" Height="20">Удалить</Button>
         </StackPanel>
         <Label FontSize="20" FontWeight="DemiBold" Foreground="#FFFAFA" Margin="20" Width="120" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top">Клиенты</Label>
-        <DataGrid IsReadOnly="True" x:Name="ClientsDG" Width="600" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30"></DataGrid>
-        
+        <DataGrid IsReadOnly="True" x:Name="ClientsDG" Width="550" Height="280" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="120"/>
+                <DataGridTextColumn Binding="{Binding PhoneNumber}" Header="Номер телефона" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Birthday, StringFormat={}{0:dd/MM/yyyy}}" Header="Дата рождения" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Description}" Header="Описание" Width="190"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Page>

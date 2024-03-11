@@ -23,6 +23,7 @@ namespace NoteSecretary.Pages
         {
             InitializeComponent();
             ClientsDG.ItemsSource = DB_Connection.secretaryDBEntities.Clients.ToList();
+            
         }
     }
 }

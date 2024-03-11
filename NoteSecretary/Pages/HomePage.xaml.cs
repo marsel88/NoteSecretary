@@ -29,8 +29,6 @@ namespace NoteSecretary.Pages
             DateTime now = DateTime.Now;
             TodayDateTimeTB.Text = now.ToString("g");
             DB_Connection.secretaryDBEntities.User.ToList();
-            NameTB.Text = DB_Connection.secretaryDBEntities.User.First().Name;
-            
-        }
+            NameTB.Text = DB_Connection.secretaryDBEntities.User.First().Name;        }
     }
 }
