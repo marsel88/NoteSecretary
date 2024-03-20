@@ -11,15 +11,15 @@
 
     <Grid>
         <StackPanel Orientation="Horizontal" Width="450" Height="60" Margin="40,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button x:Name="AddMeetingBtn" Margin="10" Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить встречу</Button>
+            <Button x:Name="AddMeetingBtn" Margin="10" Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddMeetingBtn_Click">Добавить встречу</Button>
             <Button x:Name="EditMeetingBtn" Width="100" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">Редактировать</Button>
-            <Button x:Name="DeleteMeetingBtn" Margin="10"  Width="70" Height="20">Удалить</Button>
+            <Button x:Name="DeleteMeetingBtn" Margin="10"  Width="70" Height="20" Click="DeleteMeetingBtn_Click">Удалить</Button>
         </StackPanel>
         <Label FontSize="20" FontWeight="DemiBold" Foreground="#FFFAFA" Margin="20" Width="120" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top">Встречи</Label>
-        <DataGrid x:Name="MeetingsDG" Width="550" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" AutoGenerateColumns="False">
+        <DataGrid IsReadOnly="True" x:Name="MeetingsDG" Width="550" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Clients.Name}" Header="Клиент" Width="*"/>
-                <DataGridTextColumn Binding="{Binding date, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Header="Дата" Width="*"/>
+                <DataGridTextColumn Binding="{Binding date, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Header="Дата и время" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Тема встречи" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>

@@ -11,12 +11,12 @@
 
     <Grid>
         <StackPanel Orientation="Horizontal" Width="450" Height="60" Margin="40,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button x:Name="AddDoBtn" Margin="10" Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">Добавить задачу</Button>
+            <Button x:Name="AddDoBtn" Margin="10" Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddDoBtn_Click">Добавить задачу</Button>
             <Button x:Name="EditDoBtn" Width="100" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">Редактировать</Button>
-            <Button x:Name="DeleteDoBtn" Margin="10"  Width="70" Height="20">Удалить</Button>
+            <Button x:Name="DeleteDoBtn" Margin="10"  Width="70" Height="20" Click="DeleteDoBtn_Click">Удалить</Button>
         </StackPanel>
         <Label FontSize="20" FontWeight="DemiBold" Foreground="#FFFAFA" Margin="20" Width="120" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top">Список дел</Label>
-        <DataGrid x:Name="DoListDG" Width="550" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" AutoGenerateColumns="False">
+        <DataGrid IsReadOnly="True" x:Name="DoListDG" Width="550" Height="280" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" AutoGenerateColumns="False">
             <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="150"/>
                 <DataGridTextColumn Binding="{Binding Description}" Header="Описание" Width="*"/>

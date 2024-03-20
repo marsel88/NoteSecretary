@@ -6,6 +6,5 @@ namespace NoteSecretary
     {
         public static SqlConnection connection = new SqlConnection();
         public static SecretaryDBEntities secretaryDBEntities = new SecretaryDBEntities();
-        
     }
 }

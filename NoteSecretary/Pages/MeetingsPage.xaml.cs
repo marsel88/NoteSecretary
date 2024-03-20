@@ -25,5 +25,37 @@ namespace NoteSecretary.Pages
             InitializeComponent();
             MeetingsDG.ItemsSource = DB_Connection.secretaryDBEntities.Meetings.ToList();
         }
+
+        private void AddMeetingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddMeetingsWindow addMeetingsWindow = new AddMeetingsWindow();
+            addMeetingsWindow.Show();
+        }
+
+        private void DeleteMeetingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(MeetingsDG.SelectedItem != null)
+            {
+                if (MessageBox.Show("Вы действительно хотите удалить встречу?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    var CurrentMeeting = MeetingsDG.SelectedItem as Meetings;
+                    if (CurrentMeeting != null)
+                    {
+                        DB_Connection.secretaryDBEntities.Meetings.Remove(CurrentMeeting);
+                        DB_Connection.secretaryDBEntities.SaveChanges();
+
+                        MeetingsDG.ItemsSource = null;
+                        MeetingsDG.ItemsSource = DB_Connection.secretaryDBEntities.DoList.ToList();
+
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Вы не выбрали ни одной встречи", "Ошибка");
+            }
+            
+        }
     }
-}
+    }
