@@ -30,8 +30,13 @@ namespace NoteSecretary.Pages
 
         private void AddDoBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddDoListWindow addDoListWindow = new AddDoListWindow();
+            AddDoListWindow addDoListWindow = new AddDoListWindow(this);
             addDoListWindow.Show();
+        }
+        public void RefreshDataGrid()
+        {
+            DoListDG.ItemsSource = null;
+            DoListDG.ItemsSource = DB_Connection.secretaryDBEntities.DoList.ToList();
         }
 
         private void DeleteDoBtn_Click(object sender, RoutedEventArgs e)

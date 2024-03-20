@@ -21,11 +21,13 @@ namespace NoteSecretary.Pages
     public partial class AddClientPage : Window
 
     {
+        ClientsPage clientsPage;
 
-        public AddClientPage()
+        public AddClientPage(ClientsPage clientsPage)
         {
-
             InitializeComponent();
+            this.clientsPage = clientsPage;
+
         }
 
 
@@ -43,6 +45,8 @@ namespace NoteSecretary.Pages
 
                 DB_Connection.secretaryDBEntities.Clients.Add(client);
                 DB_Connection.secretaryDBEntities.SaveChanges();
+                
+                clientsPage.RefreshDataGrid();
                 this.Close();
                 
             }

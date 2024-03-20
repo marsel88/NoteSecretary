@@ -19,9 +19,11 @@ namespace NoteSecretary.Pages
     /// </summary>
     public partial class AddDoListWindow : Window
     {
-        public AddDoListWindow()
+        DoListPage doListPage;
+        public AddDoListWindow(DoListPage doListPage)
         {
             InitializeComponent();
+            this.doListPage = doListPage;
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
@@ -41,6 +43,7 @@ namespace NoteSecretary.Pages
 
                 DB_Connection.secretaryDBEntities.DoList.Add(doList);
                 DB_Connection.secretaryDBEntities.SaveChanges();
+                doListPage.RefreshDataGrid();
                 this.Close();
             }
             catch

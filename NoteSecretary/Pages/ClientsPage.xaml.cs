@@ -25,18 +25,19 @@ namespace NoteSecretary.Pages
         {
             InitializeComponent();
             ClientsDG.ItemsSource = DB_Connection.secretaryDBEntities.Clients.ToList();
-
-
-
         }
 
         private void AddClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddClientPage addClientPage = new AddClientPage();
+            AddClientPage addClientPage = new AddClientPage(this);
             addClientPage.Show();
         }
 
-
+        public void RefreshDataGrid()
+        {
+            ClientsDG.ItemsSource = null;
+            ClientsDG.ItemsSource = DB_Connection.secretaryDBEntities.Clients.ToList();
+        }
 
         private void DeleteClientBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -67,7 +68,8 @@ namespace NoteSecretary.Pages
         }
         private void EditClientBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            EditClientsWindow editClientsWindow = new EditClientsWindow();
+            editClientsWindow.Show();
         }
     }
 }

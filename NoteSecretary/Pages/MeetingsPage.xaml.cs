@@ -28,8 +28,14 @@ namespace NoteSecretary.Pages
 
         private void AddMeetingBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddMeetingsWindow addMeetingsWindow = new AddMeetingsWindow();
+            AddMeetingsWindow addMeetingsWindow = new AddMeetingsWindow(this);
             addMeetingsWindow.Show();
+        }
+
+        public void RefreshDataGrid()
+        {
+            MeetingsDG.ItemsSource = null;
+            MeetingsDG.ItemsSource = DB_Connection.secretaryDBEntities.Meetings.ToList();
         }
 
         private void DeleteMeetingBtn_Click(object sender, RoutedEventArgs e)
@@ -45,7 +51,7 @@ namespace NoteSecretary.Pages
                         DB_Connection.secretaryDBEntities.SaveChanges();
 
                         MeetingsDG.ItemsSource = null;
-                        MeetingsDG.ItemsSource = DB_Connection.secretaryDBEntities.DoList.ToList();
+                        MeetingsDG.ItemsSource = DB_Connection.secretaryDBEntities.Meetings.ToList();
 
                     }
 
@@ -56,6 +62,12 @@ namespace NoteSecretary.Pages
                 MessageBox.Show("Вы не выбрали ни одной встречи", "Ошибка");
             }
             
+        }
+
+        private void EditMeetingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EditMeetingsWindow editMeetingsWindow = new EditMeetingsWindow();
+            editMeetingsWindow.Show();
         }
     }
     }

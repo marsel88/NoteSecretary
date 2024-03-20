@@ -19,10 +19,13 @@ namespace NoteSecretary.Pages
     /// </summary>
     public partial class AddMeetingsWindow : Window
     {
-        public AddMeetingsWindow()
+        MeetingsPage meetingsPage;
+        public AddMeetingsWindow(MeetingsPage meetingsPage)
         {
             InitializeComponent();
             ClientsComboBox.ItemsSource = DB_Connection.secretaryDBEntities.Clients.ToList();
+            this.meetingsPage = meetingsPage;
+
 
         }
 
@@ -45,6 +48,7 @@ namespace NoteSecretary.Pages
 
                 DB_Connection.secretaryDBEntities.Meetings.Add(meeting);
                 DB_Connection.secretaryDBEntities.SaveChanges();
+                meetingsPage.RefreshDataGrid();
                 this.Close();
             }
             catch
